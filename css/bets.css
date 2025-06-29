@@ -1,0 +1,654 @@
+/* ===== RESET E VARIÁVEIS ===== */
+:root {
+    --primary-bg: #010008;
+    --gradient-start: #ffd649;
+    --gradient-end: #ff426c;
+    --text-light: #ffffff;
+    --text-gray: #b3b3b3;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Leckerli';
+    src: url('../fonts/LeckerliOne.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== LAYOUT BASE ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ===== HEADER (IGUAL À REFERÊNCIA) ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    background-color: var(--primary-bg);
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    font-weight: 600;
+    position: relative;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: white;
+}
+
+/* ===== SEÇÃO HERO ===== */
+.hero {
+    padding: 140px 0 60px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.gradient-circle {
+    position: absolute;
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 1/1;
+       background: linear-gradient(
+               135deg,  /* Ângulo diagonal (45 graus) */
+               var(--gradient-start) 0%,
+               var(--gradient-end) 100%
+           );
+        border-radius: 50%;
+        z-index: 1;
+        opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* ===== BOTÕES ===== */
+.btn-primary {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 66, 108, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== HOW IT WORKS SECTION ===== */
+#how-it-works {
+    text-align: center;
+}
+
+.feature-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-benefits li {
+    background: linear-gradient(30deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.feature-benefits li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 214, 73, 0.2);
+}
+
+.feature-benefits i {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+/* ===== SEÇÃO PARA PSICÓLOGOS - VERSÃO HARMONIZADA ===== */
+#for-professionals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+}
+
+.professional-benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.professional-benefits h4{
+   margin: 0;
+   padding: 0;
+}
+
+.highlight-price {
+  color: #fc0038; /* vermelho vibrante */
+  font-size: 1.5em; /* aumenta um pouco */
+  font-weight: 900;
+  background: linear-gradient(90deg, #fc0038, #ff7a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(252, 0, 56, 0.8);
+}
+
+
+.benefit-intro {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: white;
+    text-align: center;
+    max-width: 800px;
+}
+
+.benefit-item {
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: linear-gradient(30deg, var(--gradient-start), var(--gradient-end));
+}
+
+.benefit-item h3 {
+    color: white
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-item p {
+    color: white;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== FORMULÁRIO - VERSÃO HARMONIZADA ===== */
+
+.registration-form {
+    display:flex;
+      width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 0;
+}
+
+.registration-form input,
+.registration-form textarea {
+  width: 100%;
+  box-sizing: border-box; /* pra incluir padding e borda no cálculo da largura */
+}
+
+.registration-form input,
+.registration-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group {
+  width: 100%;
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.8rem;
+    background: rgba(255, 214, 73, 0.08);
+    border-radius: 8px;
+}
+
+.form-notice i {
+    color: var(--gradient-start);
+    font-size: 1.2rem;
+}
+
+.primary-button {
+    background: white;
+    color: var(--gradient-end);
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(255, 214, 73, 0.3);
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 214, 73, 0.4);
+}
+
+/* ===== FOOTER (IGUAL À REFERÊNCIA) ===== */
+.footer {
+    background-color: #03030c;
+}
+
+.footer-bottom {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    padding: 0;
+    margin: 0;
+    color: var(--text-light);
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    color: var(--text-light);
+}
+
+.footer-legal a:hover {
+    color: var(--gradient-start);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 150px 0 40px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .gradient-circle {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--primary-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .feature-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .registration-form {
+        padding: 1.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-legal {
+        justify-content: center;
+    }
+}
+
+/**/
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 1 1 100%; /* ocupa 100% da largura disponível, mas permite flexibilidade */
+  max-width: 100%; /* impede que ultrapasse o container */
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  color: #fff;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  background: linear-gradient(30deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+#how-to-register h2 {
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 20px); /* dois cards por linha */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33.33% - 20px); /* três cards por linha */
+    max-width: calc(33.33% - 20px);
+  }
+}
+
+      .blue-button {
+            background-color: #3483FA;
+            color: white;
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            font-family: Arial, sans-serif;
+        }
+        .blue-button:hover {
+            background-color: #2a68c8;
+        }
