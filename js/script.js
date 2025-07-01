@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Animação ao rolar
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-card, .pricing-card, .about-image img, .contact-form, .hero-content, .hero-image');
+        const elements = document.querySelectorAll('.solution-card, .pricing-card, .company-image img, .contact-form, .hero-content, .hero-image');
 
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -54,14 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-
-    // Configurar estado inicial para elementos animados
-    document.querySelectorAll('.feature-card, .pricing-card, .about-image img, .contact-form, .hero-content, .hero-image').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
 
