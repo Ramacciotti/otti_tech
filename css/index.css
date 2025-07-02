@@ -44,19 +44,8 @@ body {
     line-height: 1.6;
 }
 
-
-
 html {
     scroll-behavior: smooth;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
 }
 
 /* ===== LAYOUT BASE ===== */
@@ -77,12 +66,12 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: white;
 }
@@ -97,16 +86,27 @@ h3 {
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: white;
     margin-bottom: 1.5rem;
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0 auto 3rem;
     text-align: center;
     color: white;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+}
+
+ul {
+    list-style: none;
 }
 
 /* ===== BOTÕES ===== */
@@ -577,6 +577,161 @@ nav {
     color: var(--gradient-start);
 }
 
+
+/* ===== SEÇÃO DE ESTATÍSTICAS ===== */
+.mental-health {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: rgba(6, 6, 15, 0.8);
+}
+
+.mental-health-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto;
+}
+
+.mental-health-card {
+ background: linear-gradient(30deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.mental-health-card:hover {
+    transform: translateY(-5px);
+}
+
+.mental-health-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white;
+}
+
+.mental-health-description {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.5;
+}
+
+.mental-health-source {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.mental-health-source a {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.mental-health-source a:hover {
+    color: var(--gradient-end);
+    text-decoration: underline;
+}
+
+.mental-health-source p {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .mental-health-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .mental-health-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mental-health-number {
+        font-size: 2rem;
+    }
+}
+
+/* ===== SEÇÃO CONTRIBUIÇÃO ===== */
+.contribution {
+    padding: 80px 0;
+    background-color: rgba(6, 6, 15, 0.8);
+    color: #fff;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.contribution h2 {
+    margin-bottom: 1rem;
+}
+
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.contribution-card {
+    border: 1px solid rgb(23 23 39);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-5px);
+}
+
+.gradient-border{
+    position: relative;
+    z-index: 0;
+    background-color: transparent;
+}
+
+.gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.contribution-card h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.contribution-card p {
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.qr-code {
+    width: 160px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
     .hero-grid,
@@ -684,84 +839,3 @@ nav {
         justify-content: center;
     }
 }
-
-/* ===== SEÇÃO DE ESTATÍSTICAS ===== */
-.mental-health {
-    padding-top: 80px;
-    padding-bottom: 20px;
-    text-align: center;
-    background-color: rgba(6, 6, 15, 0.8);
-}
-
-.mental-health-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 3rem auto;
-}
-
-.mental-health-card {
- background: linear-gradient(30deg, var(--gradient-start), var(--gradient-end));
-    border-radius: 15px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-}
-
-.mental-health-card:hover {
-    transform: translateY(-5px);
-}
-
-.mental-health-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: white;
-}
-
-.mental-health-description {
-    font-size: 1rem;
-    color: white;
-    line-height: 1.5;
-}
-
-.mental-health-source {
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: var(--text-gray);
-}
-
-.mental-health-source a {
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.mental-health-source a:hover {
-    color: var(--gradient-end);
-    text-decoration: underline;
-}
-
-.mental-health-source p {
-    color: white;
-    transition: all 0.3s ease;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    .mental-health-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .mental-health-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .mental-health-number {
-        font-size: 2rem;
-    }
-}
-
-
