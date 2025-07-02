@@ -4,7 +4,7 @@
     --gradient-start: #ffd649;
     --gradient-end: #ff426c;
     --text-light: #ffffff;
-    --text-gray: #b3b3b3;
+    --text-gray: #27273d;
     --card-bg: rgba(255, 255, 255, 0.05);
     --card-border: rgba(255, 255, 255, 0.1);
 }
@@ -64,7 +64,6 @@ ul {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 section {
@@ -132,7 +131,7 @@ p {
 .btn-secondary {
     background: transparent;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(23 23 39);
     padding: 12px 24px;
     border-radius: 50px;
     font-weight: 600;
@@ -141,7 +140,7 @@ p {
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(23 23 39);
 }
 
 /* ===== HEADER ===== */
@@ -355,7 +354,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.05);
+  border: 1px solid rgb(23 23 39);
   border-radius: 20px;
   padding: 20px;
 }
@@ -497,7 +496,7 @@ nav {
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     text-align: left;
 }
 
@@ -544,7 +543,7 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(6, 6, 15, 0.8);
     margin-top: 80px;
 }
 
@@ -555,8 +554,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     margin: 0;
-    padding-right: 50px;
-    padding-left: 50px;
+    max-width: 1200px;
 }
 
 .footer-content p{
@@ -692,7 +690,7 @@ nav {
     padding-top: 80px;
     padding-bottom: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(6, 6, 15, 0.8);
 }
 
 .mental-health-grid {
@@ -735,13 +733,18 @@ nav {
 }
 
 .mental-health-source a {
-    color: var(--gradient-start);
+    color: white;
     transition: all 0.3s ease;
 }
 
 .mental-health-source a:hover {
     color: var(--gradient-end);
     text-decoration: underline;
+}
+
+.mental-health-source p {
+    color: white;
+    transition: all 0.3s ease;
 }
 
 /* Responsividade para telas menores */

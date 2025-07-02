@@ -4,7 +4,7 @@
     --gradient-start: #56fdff;
     --gradient-end: #9155ff;
     --text-light: #ffffff;
-    --text-gray: #b3b3b3;
+    --text-gray: #27273d;
     --card-bg: rgba(255, 255, 255, 0.05);
     --card-border: rgba(255, 255, 255, 0.1);
 }
@@ -31,7 +31,6 @@ html {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -189,7 +188,7 @@ nav {
 .btn-secondary {
     background: transparent;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(23 23 39);
     padding: 12px 24px;
     border-radius: 50px;
     font-weight: 600;
@@ -198,8 +197,9 @@ nav {
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(23 23 39);
 }
+
 
 .primary-button {
     background: white;
@@ -307,7 +307,7 @@ nav {
     justify-content: center;
     padding-top: 80px;
     padding-bottom: 50px;
-    background-color: rgba(255, 255, 255, 0.03);
+    background: rgba(6, 6, 15, 0.8);
     border-radius: 15px;
 }
 
@@ -384,7 +384,7 @@ nav {
 }
 
 .info-card {
-    background: rgb(18 18 28);
+    border: 1px solid rgb(23 23 39);
     padding: 1.25rem 1.5rem;
     border-radius: 12px;
     color: var(--text-light);
@@ -411,18 +411,18 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(6, 6, 15, 0.8);
     margin-top: 80px;
 }
 
 .footer-content {
     display:flex;
     height: 100px;
-    width: 60%;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     margin: 0;
-    padding: 0;
+    max-width: 1200px;
 }
 
 .footer-content p{
