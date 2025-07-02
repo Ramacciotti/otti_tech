@@ -89,6 +89,7 @@ p {
     font-size: 1rem;
     color: white;
     margin-bottom: 1.5rem;
+    font-weight: 400;
 }
 
 .subtitle {
@@ -245,17 +246,13 @@ nav {
 
 .gradient-circle {
     position: absolute;
-        width: 100%;
-        max-width: 500px;
-        aspect-ratio: 1/1;
-       background: linear-gradient(
-               135deg,  /* Ângulo diagonal (45 graus) */
-               var(--gradient-start) 0%,
-               var(--gradient-end) 100%
-           );
-        border-radius: 50%;
-        z-index: 1;
-        opacity: 0.9;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.9;
 }
 
 .hero-buttons {
@@ -536,48 +533,6 @@ nav {
     }
 }
 
-/* ===== FOOTER ===== */
-.footer {
-    display:flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background-color: rgba(6, 6, 15, 0.8);
-    margin-top: 80px;
-}
-
-.footer-content {
-    display:flex;
-    height: 100px;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-    max-width: 1200px;
-}
-
-.footer-content p{
-   margin: 0;
-}
-
-.footer-legal {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.footer-legal a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-legal a:hover {
-    color: var(--gradient-start);
-}
-
-
 /* ===== SEÇÃO DE ESTATÍSTICAS ===== */
 .mental-health {
     padding-top: 80px;
@@ -730,6 +685,48 @@ nav {
     margin-bottom: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ===== FOOTER ===== */
+.footer {
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgba(6, 6, 15, 0.8);
+    margin-top: 80px;
+}
+
+.footer-content {
+    display:flex;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    max-width: 1200px;
+}
+
+.footer-content p{
+   margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--gradient-end);
 }
 
 /* ===== RESPONSIVIDADE ===== */

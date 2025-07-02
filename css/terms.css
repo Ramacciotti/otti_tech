@@ -1,0 +1,260 @@
+/* ===== RESET E VARIÁVEIS ===== */
+:root {
+    --primary-bg: #010008;
+    --gradient-start: #ffd649;
+    --gradient-end: #ff426c;
+    --text-light: #ffffff;
+    --text-gray: #27273d;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+   font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Leckerli';
+    src: url('../fonts/LeckerliOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+    src: url('../fonts/Pacifico.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== LAYOUT BASE ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding-top: 80px;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: white;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+   background-color: var(--primary-bg);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    font-weight: 600;
+    position: relative;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+/* Título principal */
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Blocos de termos */
+.terms-block {
+  margin-bottom: 40px;
+}
+
+.terms-block h3 {
+  font-size: 1.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+      background-clip: text;
+      color: transparent;
+      margin: 0;
+}
+
+.terms-block p,
+.terms-block ul {
+  font-size: 1rem;
+}
+
+/* Lista personalizada */
+.terms-block ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/* Responsividade opcional */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .terms-block h3 {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 40px 16px;
+  }
+}
+
+
+/* ===== FOOTER ===== */
+.footer {
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgba(6, 6, 15, 0.8);
+    margin-top: 80px;
+}
+
+.footer-content {
+    display:flex;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    max-width: 1200px;
+}
+
+.footer-content p{
+   margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--gradient-end);
+}
+
